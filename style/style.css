@@ -1,0 +1,501 @@
+:root {
+    --mf-distanceTop: (var(--mf-ascender) - var(--mf-xHeight));
+    --mf-valign: (var(--mf-descender) - var(--mf-distanceTop));
+    --mf-lowercase-line-height: calc(((var(--mf-xHeight))) * 1em);
+    --mf-uppercase-line-height: calc(((var(--mf-capitalHeight))) * 1em);
+
+    --sf-distanceTop: (var(--sf-ascender) - var(--sf-xHeight));
+
+    --sf-valign: (var(--sf-descender) - var(--sf-distanceTop));
+
+    --sf-lowercase-line-height: calc(((var(--sf-xHeight))) * 1em);
+    --sf-uppercase-line-height: calc(((var(--sf-capitalHeight))) * 1em);
+}
+
+* {
+    font-family: inherit;
+    text-align: center;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 0;
+
+}
+
+html,
+body,
+#design,
+#mainContainer {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: black;
+    font-family: var(--main-font);
+    color: white;
+    text-transform: capitalize;
+}
+
+#mainContainer {
+    margin: 0 auto;
+    padding: 4vw 4vw;
+    box-sizing: border-box;
+
+}
+
+#mainContainer .outer {
+    /* background: rgba(255,255,255,0.3); */
+    /* border-top:1px solid white; */
+    /* border-bottom:1px solid white; */
+    display: inline-block;
+    position: relative;
+}
+
+/* .textFitted {
+    display: block !important;
+} */
+
+.uppercase .outer{
+    text-transform: uppercase;
+}
+
+.lowercase .font {
+    text-transform: lowercase;
+    z-index: 9999;
+}
+
+.capitalize .outer {
+    text-transform: capitalize;
+
+}
+
+.font:before,
+.inner:before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+}
+
+.inner {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.mainColor {
+    color: var(--main-color);
+}
+
+.secondColor {
+    color: var(--second-color);
+}
+
+svg.convert {
+    max-height: calc(var(--mf-uppercase-line-height) * 1.5);
+    width: auto;
+    margin: 0.2em auto;
+    display: block;
+}
+
+svg.convert #main {
+    fill: var(--main-color);
+}
+
+svg.convert #accent {
+    fill: var(--second-color);
+}
+
+
+/* END BASELINE */
+
+/* -------------------------- */
+
+.textLine:nth-of-type(even) {
+    margin:1rem 0;
+}
+
+.textLine:first-of-type .outer {
+    margin-top:0;
+}
+
+/* Default Font settings */
+/* --------------------- */
+
+/* Main Font */
+.mainFont {
+    font-family: var(--main-font);
+}
+
+.mainFont .inner {
+    position: relative;
+}
+
+.mainFont.lowercase .inner {
+    height: var(--mf-lowercase-line-height); 
+}
+
+.mainFont.uppercase .inner,
+.mainFont.capitalize .inner {
+    height: var(--mf-uppercase-line-height)
+}
+
+
+
+/* Second Font */
+.secondFont {
+    font-family: var(--second-font);
+}
+
+.secondFont .inner {
+    position: relative;
+}
+
+.secondFont.lowercase .inner {
+    height: var(--sf-lowercase-line-height);
+}
+
+.secondFont.uppercase .inner,
+.secondFont.capitalize .inner {
+    height: var(--sf-uppercase-line-height);
+
+}
+
+
+/* Ascender and Descender adjustments 
+   ---------------------------------
+*/ 
+
+/* Main Font */
+
+ 
+/* .mainFont.ascent.lowercase .inner {
+    margin-top: calc(var(--mf-distanceTop) * 1em);
+} */
+
+/* .mainFont.descent.ascent.lowercase .inner{
+    margin-top: calc(var(--mf-distanceTop) * 1em);
+    margin-bottom: calc(var(--mf-descender) * 1em);
+} */
+/* .mainFont.descent.capitalize .inner {
+    margin-bottom: calc(var(--mf-descender) * 1em);
+} */
+
+.textLine.mainFont.lowercase:first-of-type .inner {
+    margin-top: 0;
+}
+
+.textLine.mainFont.lowercase.ascent:first-of-type .inner {
+    margin-top: calc(var(--mf-distanceTop) * 1em);
+}
+
+.oneFont.mainFont.lowercase .inner {
+    margin-top: calc(var(--mf-distanceTop) * 0.5em);
+    margin-bottom:0 !important;
+   }
+
+/* Second Font */
+
+/* .secondFont.ascent.lowercase .inner {
+    margin-top: calc(var(--sf-distanceTop) * 1em);
+}
+
+.secondFont.descent.ascent.lowercase .inner{
+    margin-top: calc(var(--sf-distanceTop) * 1em);
+    margin-bottom: calc(var(--sf-descender) * 1em);
+}
+
+.secondFont.descent.capitalize .inner {
+    margin-bottom: calc(var(--sf-descender) * 1em); */
+/* } */
+
+.textLine.secondFont.lowercase:first-of-type .inner {
+    margin-top: 0;
+}
+
+.textLine.secondFont.lowercase.ascent:first-of-type .inner {
+    margin-top: calc(var(--sf-distanceTop) * 1em);
+}
+
+.oneFont.secondFont.lowercase .inner {
+    margin-top: calc(var(--sf-distanceTop) * 0.5em);
+    margin-bottom:0 !important;
+   }
+
+
+
+
+/* Ascender and Descender adjustments */
+
+
+
+
+
+
+
+
+/* Styles */
+/* ----------------------------- */
+
+.skewY#mainContainer, 
+.skewX#mainContainer,
+.skewOdd#mainContainer,
+.skewEven#mainContainer {
+    padding-top:calc(4vw + 2rem);
+    padding-bottom:calc(4vw + 2rem);
+}
+
+.skewXLeft #design {
+    transform:skewX(4deg);
+}
+
+.skewXRight #design {
+    transform:skewX(-4deg);
+}
+
+.skewOdd .textLine:nth-of-type(odd) {
+    transform:skewY(-4deg);
+    z-index: -1;
+}
+
+.skewOdd .textLine:nth-of-type(even) .inner {
+    text-shadow: -4px -4px 0px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.skewEven .textLine:nth-of-type(even) {
+    transform:skewY(-4deg);
+    margin-top:0;
+    z-index: -1;
+}
+
+.skewEven .textLine:nth-of-type(odd) .inner {
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.skewYTop #design {
+    transform:skewY(-4deg);
+}
+
+.skewYDown #design {
+    transform:skewY(4deg);
+}
+
+
+/* Highlight */
+
+.highlight-even .inner,
+.highlight-odd .inner,
+.highlight-all .inner {
+    text-shadow: -4px -4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-even .lowercase .inner,
+.highlight-even .capitalize .inner,
+.highlight-odd .lowercase .inner,
+.highlight-odd .capitalize .inner,
+.highlight-all .lowercase .inner,
+.highlight-all .capitalize .inner {
+    margin:0 !important;
+
+}
+
+.highlight-even .font,
+.highlight-odd .font,
+.highlight-all .font  {
+   z-index: 2;
+    
+}
+
+.highlight-odd .textLine:nth-of-type(odd) .outer:before,
+.highlight-even .textLine:nth-of-type(even) .outer:before,
+.highlight-all .textLine p.outer:before 
+{
+    content:'';
+    display: block;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background: var(--second-color);
+    z-index: -1;
+}
+
+.highlight-odd .textLine:nth-of-type(odd) .outer {
+    color: white;
+    padding:1.25rem 1.5rem;
+}
+
+.highlight-even .textLine:nth-of-type(even) .outer {
+    /* background:var(--second-color); */
+    color: white;
+    padding:1.25rem 1.5rem;
+}
+
+.highlight-all .textLine .outer {
+    /* background:var(--second-color); */
+    color: white;
+    padding:1.25rem 1.5rem;
+}
+
+.highlight-all .textLine,
+.highlight-odd .textLine,
+.highlight-even .textLine {
+    margin: 2rem 0;
+}
+
+
+.highlight-odd .textLine:nth-of-type(even).lowercase .inner,
+.highlight-odd .textLine:nth-of-type(even).capitalize  .inner,
+.highlight-even .textLine:nth-of-type(odd).lowercase .inner,
+.highlight-even .textLine:nth-of-type(odd).capitalize .inner,
+.secondFont {
+    text-shadow: -3px -3px 0px rgba(0, 0, 0, 0.3);
+/*     background:red; */
+    z-index: 9999;
+}
+
+/* Colors */
+
+#mainContainer.mainColor .textLine:nth-of-type(even){
+    color:var(--main-color);
+}
+
+#mainContainer.secondColor .textLine:nth-of-type(even){
+    color:var(--second-color);
+}
+
+#mainContainer.whiteColor .textLine:nth-of-type(odd) {
+    color:var(--second-color);
+}
+
+
+
+#mainContainer.alt-mainColor .textLine:nth-of-type(odd) {
+    color:var(--main-color);
+}
+
+#mainContainer.alt-mainColor .textLine:nth-of-type(even) {
+    color:var(--second-color);
+
+}
+
+#mainContainer.alt-secondColor .textLine:nth-of-type(odd){
+    color:var(--second-color);
+}
+
+
+#mainContainer.alt-secondColor .textLine:nth-of-type(even){
+    color:var(--main-color);
+}
+
+
+
+/* .textLine+svg {
+    margin-bottom: 0 !important;
+} */
+
+.convert+div.secondFont .inner {
+    margin-top: 0 !important;
+    height: var(--mf-lowercase-line-height)
+}
+
+.convert+div.uppercase .inner {
+    margin-top: 0 !important;
+    height: var(--mf-uppercase-line-height);
+
+}
+
+
+#mainContainer {
+    -webkit-mask-image: url("https://dl.airtable.com/.attachments/41e0709e40f146a13d73f16868735c7a/d21ce4ee/grunge-texture-by-krist-photoshop-textures.png");
+    mask-image: url("https://dl.airtable.com/.attachments/41e0709e40f146a13d73f16868735c7a/d21ce4ee/grunge-texture-by-krist-photoshop-textures.png");
+    mask-size: cover;
+   -webkit-mask-size: cover;
+}
+
+.textFitted {
+    position: relative;
+}
+
+.square .textFitted:before {
+    content: '';
+    position: absolute;
+    height: 40%;
+    width: 60%;
+    margin: 0 auto;
+    left: 50%;
+    top:50%;
+      transform: translate(-50%, -50%) rotate(5deg);
+    /* transform: rotate(5deg); */
+    border: 2px solid var(--main-color);
+    z-index: -23;
+     opacity:0.6
+}
+
+.square .textFitted:after {
+    content: '';
+    position: absolute;
+    /*     display: flex; */
+    /* justify-self: center; */
+    height: 35%;
+    width: 60%;
+    margin: 0 auto;
+    left: 50%;
+    /* border-radius:100%; */
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    /* transform: rotate(5deg); */
+    border: 2px solid var(--second-color);
+    z-index: -23;
+    opacity:0.7;
+}
+
+.circle .textFitted:before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    left: 50%;
+    top:55%;
+    border-radius: 100%;
+      transform: translate(-50%, -50%) rotate(5deg);
+    /* transform: rotate(5deg); */
+    border: 2px solid var(--main-color);
+    z-index: -23;
+     opacity:0.6
+}
+
+.circle .textFitted:after {
+    content: '';
+    position: absolute;
+    /*     display: flex; */
+    /* justify-self: center; */
+    height: 60%;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 100%;
+    left: 53%;
+    /* border-radius:100%; */
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    /* transform: rotate(5deg); */
+    border: 2px solid var(--second-color);
+    z-index: -23;
+    opacity:0.7;
+}

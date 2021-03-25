@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- HTML -->
+    <div id="mainContainer" class="">
+        <div id="design">
+
+        </div>
+    </div>
+
+    <!-- Data -->
+    <script type="text/javascript" language="javascript" src="./data/data.js"></script>
+
+    <!-- Embeded Scripts -->
+
+    <script rel="preload" src="https://unpkg.com/textfit@2.4.0/textFit.min.js" as="script" crossorigin></script>
+    <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" as="script" crossorigin></script>
+    <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" as="script" crossorigin></script>
+    <script rel="preload" src="https://unpkg.com/fontmetrics@1.0.0/output/FontMetrics.min.js" as="script" crossorigin></script>
+    <!-- <script rel="preload" src="https://unpkg.com/svg-convert@1.0.0/dist/svgConvert.min.js" as="script" crossorigin></script> -->
+    <script rel="preload" src="https://gitcdn.link/repo/silviuhogasi/ShirtRobot/main/DesignHTMLTemplate/layout/scripts/textSplit.js" as="script" crossorigin></script>
+
+    <!-- custom script -->
+
+    <script>
+        var textSet = false;
+        var data = {
+            text: dataFile().text,
+            // text: "ABCDE FGHIJ KLMN OPRQ STVW XYZ 12345 67890 !@#$%^&* ()_-=+ {}:[],.'<>",
+            // text: splitText("warning! Awesome [variable]"), 
+            mainFont: dataFile().mainFont,
+            // mainFont: {
+            //     name:'Cooper',
+            //     url:'https://dl.airtable.com/.attachments/cea41524a86ddd62a151871b51f48f1c/344a9d4b/Exo2-ExtraBoldExpanded.otf',
+            //     transform: 'lowercase'
+            // },
+            secondFont: dataFile().secondFont,
+            // secondFont: {
+            //     name: 'Second',
+            //     url: 'https://dl.airtable.com/.attachments/685d7625bff64a81cc7ba82e33d3b50f/f3473756/MoonFlower.ttf',
+            //     transform: 'lowercase'
+            // },
+            keyword: 'nurse',
+            color: {
+                main: dataFile().color.mainColor,
+                accent: dataFile().color.accentColor
+            },
+            image: dataFile().image
+        }
+
+        async function designShirt() {
+            try {
+                
+                let font = await loadFont(data.mainFont.name, data.secondFont.name, data.mainFont.url, data
+                    .secondFont.url, data.mainFont.adjust, data.secondFont.adjust);
+                let color = await addVariable()
+                let render = await setTextLines(data.text, data.keyword, data.mainFont
+                    .transform, data.secondFont.transform, data.image)
+                let style = await randomStyle()
+                let scale = await scaleText();
+
+                // console.log(font)
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        designShirt()
+        window.setTimeout(function () {
+            // scaleText();
+            // ScreenshotReady()
+        }, 900);
+
+
+    </script>
+
+</body>
+
+</html>
