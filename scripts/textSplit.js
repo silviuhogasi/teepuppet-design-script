@@ -190,7 +190,7 @@ function addVariable(gender) {
 }
 
 // Loads fonts and adds all the style variables
-function loadFont(mainName, secondName, mainURL, secondURL, mainAdjust, secondAdjust) {
+function loadFont(mainName, secondName, mainURL, secondURL) {
 
     return new Promise((resolve, reject) => {
         var style = document.createElement('style');
