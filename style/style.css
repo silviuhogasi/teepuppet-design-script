@@ -421,12 +421,12 @@ svg.convert #accent {
 }
 
 
-#mainContainer {
+/* #mainContainer {
     -webkit-mask-image: url("https://dl.airtable.com/.attachments/41e0709e40f146a13d73f16868735c7a/d21ce4ee/grunge-texture-by-krist-photoshop-textures.png");
     mask-image: url("https://dl.airtable.com/.attachments/41e0709e40f146a13d73f16868735c7a/d21ce4ee/grunge-texture-by-krist-photoshop-textures.png");
     mask-size: cover;
    -webkit-mask-size: cover;
-}
+} */
 
 .textFitted {
     position: relative;
