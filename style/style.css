@@ -39,7 +39,6 @@ body,
 }
 
 body {
-    background: black;
     font-family: var(--main-font);
     color: white;
     text-transform: capitalize;
