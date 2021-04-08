@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <style>
+        body {
+            background: black;
+        }
+
+        h1 {
+            color: white;
+            background: red;
+            padding: 2rem;
+        }
+
+        #Two {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body style="background:black">
+    <!-- HTML -->
+    <div id="mainContainer" class="">
+        <div id="design">
+            <h1 id="One">Color One</h1>
+            <h1 id="Two">Color Two</h1>
+        </div>
+    </div>
+
+
+    <script>
+        var color = randomColor();
+        document.getElementById("Two").style.backgroundColor = color
+
+        var colorOne = randomColor();
+        document.getElementById("One").style.backgroundColor = colorOne
+
+        function randomColor() {
+
+            var h = Math.round(getRandomArbitrary(1, 360)); // color hue between 1 and 360
+            var s = Math.round(getRandomArbitrary(80, 100));
+            var l = Math.round(getRandomArbitrary(50, 60));
+
+
+
+
+
+            return 'hsl(' + h + ',' + s + '%,' + l + '%)';
+        }
+
+
+        // Get a random value between to numbers
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+    </script>
+
+</body>
+
+</html>

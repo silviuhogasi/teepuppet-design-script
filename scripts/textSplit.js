@@ -102,13 +102,14 @@ function randomColor(gender) {
     if(gender == "Male") {
         var h = Math.round(getRandomArbitrary(10, 250))
         var s = Math.round(getRandomArbitrary(80, 100)); // saturation 30-100%
-        var l = Math.round(getRandomArbitrary(50, 80)); // lightness 30-70%
+        var l = Math.round(getRandomArbitrary(50, 70)); // lightness 30-70%
         console.log("Male", h, s, l)
         return 'hsl(' + h + ',' + s + '%,' + l + '%)';
     }
+
     var h = Math.round(getRandomArbitrary(1, 360)); // color hue between 1 and 360
     var s = Math.round(getRandomArbitrary(80, 100)); // saturation 30-100%
-    var l = Math.round(getRandomArbitrary(50, 90)); // lightness 30-70%
+    var l = Math.round(getRandomArbitrary(50, 60)); // lightness 30-70%
     
     return 'hsl(' + h + ',' + s + '%,' + l + '%)';
 }

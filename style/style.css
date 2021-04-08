@@ -410,12 +410,12 @@ svg.convert #accent {
 
 .convert+div.secondFont .inner {
     margin-top: 0 !important;
-    height: var(--mf-lowercase-line-height)
+    height: calc(var(--mf-lowercase-line-height) * 1.5em)
 }
 
 .convert+div.uppercase .inner {
     margin-top: 0 !important;
-    height: var(--mf-uppercase-line-height);
+    height: calc(var(--mf-uppercase-line-height) * 1.5em);
 
 }
 
